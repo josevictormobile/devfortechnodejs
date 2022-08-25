@@ -44,6 +44,7 @@ console.log("1 - Converter graus Celsius para Fahrenheit");
 console.log("2 - Converter Fahrenheit para Celsius");
 var escolha = prompt();
 var celsius, fahrenheit;
+
 switch (escolha) {
     case '1':
         celsius = prompt("Insira a temperatura em graus Celsius");
@@ -1346,10 +1347,17 @@ switch (escolha) {
         console.log("O valor a ser pago é R$: " + preco * 0.85);
         break;
     case '3':
+<<<<<<< HEAD
         console.log("Você pagará duas parcelas de R$ " + preco / 2);
         break;
     case '4':
         console.log("Você pagará duas parcelas de R$ " + preco * 1.1 / 2);
+=======
+        console.log("Você pagará duas parcelas de R$ " + preco/2);
+        break;
+    case '4':
+        console.log("Você pagará duas parcelas de R$ " + preco*1.1/2);
+>>>>>>> b8243b8edac0c9e5c9d4258b251487c1ea26761b
         break;
     default:
         console.log("Não entendi sua intenção");
@@ -1360,8 +1368,16 @@ switch (escolha) {
 // “Você não tem acesso ao sistema”.
 
 var senha = prompt("Insira a senha: ");
+<<<<<<< HEAD
 console.log((senha == "batatafrita" ? "Acesso permitido" : "Você não tem acesso ao sistema"));
 
 // 8. Faça um algoritmo que receba um texto de entrada e diga se a primeira letra é maiúscula ou não.
 var entrada = prompt("Insira uma palavra: ");
 console.log((entrada[0] == entrada[0].toUpperCase()) ? "Primeira letra é maiúscula" : "Primeira letra minúscula");
+=======
+console.log((senha=="batatafrita"?"Acesso permitido":"Você não tem acesso ao sistema"));
+
+// 8. Faça um algoritmo que receba um texto de entrada e diga se a primeira letra é maiúscula ou não.
+var entrada = prompt("Insira uma palavra: ");
+console.log((entrada[0]==entrada[0].toUpperCase())?"Primeira letra é maiúscula":"Primeira letra minúscula");
+>>>>>>> b8243b8edac0c9e5c9d4258b251487c1ea26761b
