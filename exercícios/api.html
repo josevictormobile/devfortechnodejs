@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API - Tempo</title>
+</head>
+<body>
+    <span id="city">
+
+    </span>
+    <span id="temperature">
+
+    </span>
+    <script>
+        const CITY = document.getElementById("city");
+        const TEMPERATURE = document.getElementById("temperature");
+        const URL_MAIN = "https://api.openweathermap.org/data/2.5/weather";
+        const API_KEY = "e404dfd1cbd308d639c8962d3865c2c8";
+        const UNITS = "metric";
+        navigator.geolocation.getCurrentPosition(loadingUrl);
+        function loadingUrl(pos){
+            let lat = pos.coords.latitude;
+            let long = pos.coords.longitude;
+            let url = `${URL_MAIN}?lat=${lat}&lon=${long}&units=${UNITS}&APPID=${API_KEY}`;
+            fetchApi(url);
+        }
+
+        async function fetchApi(url){
+            let response= await fetch(url);
+            let {main,name} = await response.json();
+            let temperature = (main.temp).toFixed(1);
+            CITY.innerText = `${name}`;
+            TEMPERATURE.innerText = `${temperature} °C`;
+        }
+    </script>
+</body>
+</html>
